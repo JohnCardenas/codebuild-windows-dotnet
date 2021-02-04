@@ -13,7 +13,7 @@ RUN [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePoin
 
 # Copy packages.config and install via Chocolatey
 COPY packages.config C:\Windows\Temp\packages.config
-RUN choco.exe install C:\Windows\Temp\packages.config -y
+RUN choco.exe install C:\Windows\Temp\packages.config -y --ignore-detected-reboot --ignore-package-exit-codes
 
 # Set PATH
 RUN setx /M PATH $(${Env:PATH} `
