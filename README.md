@@ -18,8 +18,8 @@ Refer to packages.config for the software installed in the container.
 
 3. Log in to ECR (make sure you have the AWS CLI installed).
 
-   ```powershell
-   Invoke-Expression -Command (aws ecr get-login --no-include-email)
+   ```bash
+   aws ecr get-login-password --region [YOUR_REGION] | docker login --username AWS --password-stdin [YOUR_ACCOUNT_NUMBER].dkr.ecr.[YOUR_REGION].amazonaws.com
    ```
 
 4. Tag the container build with your ECR repository and tag.
