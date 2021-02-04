@@ -12,9 +12,9 @@ Refer to packages.config for the software installed in the container.
 
 2. Build the container.
 
-```bash
-docker build . -t codebuild-windows-dotnet:latest
-```
+   ```bash
+   docker build . -t codebuild-windows-dotnet:latest
+   ```
 
 3. Log in to ECR (make sure you have the AWS CLI installed).
 
@@ -22,17 +22,17 @@ docker build . -t codebuild-windows-dotnet:latest
    Invoke-Expression -Command (aws ecr get-login --no-include-email)
    ```
 
-4. Tag the your container build with your ECR repository and tag.
+4. Tag the container build with your ECR repository and tag.
 
-```bash
-docker image tag codebuild-windows-dotnet:latest [YOUR_ACCOUNT_NUMBER].dkr.ecr.[YOUR_REGION].amazonaws.com/codebuild-windows-dotnet
-```
+   ```bash
+   docker image tag codebuild-windows-dotnet:latest [YOUR_ACCOUNT_NUMBER].dkr.ecr.[YOUR_REGION].amazonaws.com/codebuild-windows-dotnet
+   ```
 
 5. Push the image.
 
-```bash
-docker image push [YOUR_ACCOUNT_NUMBER].dkr.ecr.[YOUR_REGION].amazonaws.com/codebuild-windows-dotnet
-```
+   ```bash
+   docker image push [YOUR_ACCOUNT_NUMBER].dkr.ecr.[YOUR_REGION].amazonaws.com/codebuild-windows-dotnet
+   ```
 
 ## Use with CodeBuild
 
